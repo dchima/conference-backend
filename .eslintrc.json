@@ -4,7 +4,7 @@
     "es6": true,
     "mocha": true
   },
-  "extends": ["airbnb-base"],
+  "extends": ["google"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -14,7 +14,6 @@
     "sourceType": "module"
   },
   "rules": {
-    "linebreak-style": 0,
     "one-var": 0,
     "one-var-declaration-per-line": 0,
     "new-cap": 0,
@@ -22,15 +21,15 @@
     "no-param-reassign": 0,
     "comma-dangle": 0,
     "curly": ["error", "multi-line"],
-    "import/no-unresolved": [2, { "commonjs": true }],
     "no-shadow": ["error", { "allow": ["req", "res", "err"] }],
+    "max-len": 0,
     "valid-jsdoc": [
       "error",
       {
         "requireReturn": true,
         "requireReturnType": true,
         "requireParamDescription": false,
-        "requireReturnDescription": true
+        "requireReturnDescription": false
       }
     ],
     "require-jsdoc": [
