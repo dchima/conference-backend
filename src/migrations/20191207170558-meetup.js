@@ -1,5 +1,6 @@
+
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('AttendeeTalks', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('Meetups', {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -14,7 +15,7 @@ module.exports = {
         key: 'id'
       },
       onUpdate: 'CASCADE',
-      onDelete: 'CASCADE'
+      onDelete: 'CASCADE',
     },
     attendeeId: {
       type: Sequelize.INTEGER,
@@ -35,7 +36,5 @@ module.exports = {
       type: Sequelize.DATE
     }
   }),
-
-  down: (queryInterface) => queryInterface.dropTable('AttendeeTalks')
+  down: (queryInterface, Sequelize) => queryInterface.dropTable('Meetups')
 };
-

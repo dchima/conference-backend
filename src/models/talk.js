@@ -39,9 +39,9 @@ module.exports = (sequelize, DataTypes) => {
   );
   Talk.associate = (models) => {
     Talk.belongsToMany(models.Attendee, {
-      through: 'AttendeeTalks',
+      through: 'Meetups',
       as: 'attendees',
-      foreignkey: 'talkId'
+      foreignKey: 'talkId'
     });
   };
   return Talk;

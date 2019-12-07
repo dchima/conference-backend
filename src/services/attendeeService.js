@@ -1,6 +1,6 @@
 import db from '../models';
 
-const {Attendee, AttendeeTalk, Talk} = db;
+const {Attendee, Talk, Meetup} = db;
 
 /**
  * Attendee service class, interfacer for Attendee db model
@@ -37,7 +37,7 @@ export default class AttendeeService {
    * @memberof AttendeeService
    */
   static async matchAttendeeToTalk(talkId, attendeeId) {
-    const {dataValues: newMatch} = await AttendeeTalk.create({talkId, attendeeId});
+    const {dataValues: newMatch} = await Meetup.create({talkId, attendeeId});
     return newMatch;
   }
 
@@ -55,13 +55,13 @@ export default class AttendeeService {
           required: false,
           attributes: ['talkTitle', 'talkDate'],
           through: {
-            through: AttendeeTalk,
-            attributes: ['talkId', 'attendeeId']
+            model: Meetup,
+            attributes: [],
           }
         }],
         attributes: ['firstName', 'lastName'],
         where: {}
-      });
+      }).map((values) => values.get({plain: true}));
       return attendees;
     } catch (error) {
       console.log('error: ', error);
