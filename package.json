@@ -4,14 +4,14 @@
   "description": "backend app for conference api",
   "main": "index.js",
   "scripts": {
-    "test": "npm run prestart && cross-env NODE_ENV=test nyc --reporter=text --reporter=html mocha src/test/*.js --timeout 10000 -c --require @babel/register --exit",
+    "test": "cross-env NODE_ENV=test nyc --reporter=text --reporter=html mocha src/test/*.js --timeout 10000 -c --require @babel/register --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "start": "node dist/index.js",
     "build": "babel src -d dist",
     "reset-migration": "sequelize db:migrate:undo:all",
     "migrate": "sequelize db:migrate",
     "start:dev": "npm run migrate && nodemon --exec babel-node ./src/index.js",
-    "prestart": "cross-env NODE_ENV=test npm run reset-migration && cross-env NODE_ENV=test  npm run migrate"
+    "pretest": "cross-env NODE_ENV=test npm run reset-migration && cross-env NODE_ENV=test  npm run migrate"
   },
   "repository": {
     "type": "git",
