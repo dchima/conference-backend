@@ -59,7 +59,7 @@ export default class AttendeeController {
       if (!allAttendees.length) {
         return errorResponse(res, {code: 404, message: 'There are no attendees'});
       }
-      return successResponse(res, {...allAttendees});
+      return successResponse(res, allAttendees, 200);
     } catch (error) {
       errorResponse(res, {});
     }
