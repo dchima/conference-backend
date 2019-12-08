@@ -5,7 +5,7 @@
 # conference-backend
 backend of conference app
 ## Testing
-```
+
 - clone Repo
 - cd and run `npm install`
 - run `git checkout -b [testing-branch]` to begin work
@@ -14,7 +14,7 @@ backend of conference app
 
 Please make sure to populate the neccessary variables into your `.env` file to ensure seamless work.
 Look at .env.sample file for variables needed.
-```
+
 ## API Routes
 ### GET: *TALKS*
 `https://conference-talks.herokuapp.com/api/talks`
